@@ -32,8 +32,8 @@ export default function Skills() {
     'Adobe Photoshop': '/photoshop.svg',
     'Krita': '/krita.svg',
     'Blender': '/blender.svg',
-    'Postgres': null,
-    'MongoDB': null,
+    'Postgres': '/postgresql.svg',
+    'MongoDB': '/mongodb.svg',
     'Inglés B2': null,
   };
 
