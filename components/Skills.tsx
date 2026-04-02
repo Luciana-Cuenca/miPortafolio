@@ -34,16 +34,16 @@ export default function Skills() {
     'Blender': '/blender.svg',
     'Postgres': '/postgresql.svg',
     'MongoDB': '/mongodb.svg',
-    'Inglés B2': null,
+    'Inglés B2': '/english.svg',
   };
 
   const currentSkills =
     selected === 'backend' ? backend : frontend;
 
   return (
-    <section className="w-full bg-white py-8 px-6 md:px-20">
+    <section id="habilidades" className="w-full bg-white py-8 px-6 md:px-20">
 
-      <h2 className="text-center text-4xl md:text-6xl font-extrabold text-black mb-12">
+      <h2 className="text-center text-4xl md:text-6xl font-extrabold mb-12">
         Habilidades
       </h2>
 
