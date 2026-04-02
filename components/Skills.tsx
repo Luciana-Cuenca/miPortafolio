@@ -33,7 +33,7 @@ export default function Skills() {
     'Krita': '/krita.svg',
     'Blender': '/blender.svg',
     'Postgres': null,
-    'MongoDB':'/mongodb.svg',
+    'MongoDB': null,
     'Inglés B2': null,
   };
 
