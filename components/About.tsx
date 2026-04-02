@@ -46,7 +46,7 @@ export default function About() {
               alt="about"
               className="
                 w-full
-                max-w-[800px]  
+                max-w-[900px]  
                 h-auto
                 object-cover
               "
