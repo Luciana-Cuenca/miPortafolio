@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="bg-[#EC0202] flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-20 md:py-40 gap-20"
+      className="bg-[#EC0202] flex flex-col md:flex-row items-center justify-between px-6 md:px-20 pt-24 md:pt-40 pb-20 md:pb-40 gap-20"
     >
 
       {/* TEXTO */}
