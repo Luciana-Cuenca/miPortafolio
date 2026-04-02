@@ -9,7 +9,7 @@ export default function About() {
 
         <div className="flex flex-col md:flex-row items-start gap-12 md:gap-16">
 
-          {/* TEXTO + TÍTULO */}
+          {/* TEXTO  TÍTULO */}
           <div className="w-full md:w-1/2 flex flex-col">
 
             <h2 className="text-4xl md:text-5xl title-fat mb-8 md:ml-6">
@@ -38,7 +38,7 @@ export default function About() {
 
           </div>
 
-          {/* IMAGEN (UN POCO MÁS GRANDE) */}
+          {/* IMAGEN*/}
           <div className="w-full md:w-1/2 flex justify-center">
 
             <img
@@ -46,7 +46,7 @@ export default function About() {
               alt="about"
               className="
                 w-full
-                max-w-[700px]   /* 👈 antes ~650px */
+                max-w-[800px]  
                 h-auto
                 object-cover
               "
@@ -55,6 +55,8 @@ export default function About() {
           </div>
 
         </div>
+
+        
 
       </div>
     </section>
