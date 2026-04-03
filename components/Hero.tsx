@@ -20,7 +20,6 @@ export default function Hero() {
         }`}
       >
 
-        {/* TÍTULO */}
         <h1
           className="
             text-4xl md:text-6xl font-extrabold text-white leading-none
@@ -31,14 +30,11 @@ export default function Hero() {
           Luciana Cuenca
         </h1>
 
-        {/* SUBTÍTULO (STABLE) */}
         <p className="mt-4 text-white text-xl md:text-3xl leading-tight [text-shadow:2px_2px_0_black]">
           Desarrolladora de software, Artista digital
         </p>
 
-        {/* BOTONES */}
         <div className="flex flex-col sm:flex-row gap-6 mt-10 justify-center md:justify-start">
-
           <a
             href="/cv.pdf"
             download="Luciana_Cuenca_CV.pdf"
@@ -50,16 +46,28 @@ export default function Hero() {
           <button className="bg-white px-6 py-3 text-black shadow-cartoon text-lg md:text-xl font-extrabold transition transform hover:-translate-y-1 active:translate-y-0.5">
             Contáctame
           </button>
-
         </div>
       </div>
 
       {/* IMAGEN */}
       <div
-        className={`w-40 h-40 sm:w-52 sm:h-52 md:w-72 md:h-72 bg-black shadow-cartoon-lg transform transition-all duration-700 ${
+        className={`w-40 h-40 sm:w-52 sm:h-52 md:w-72 md:h-72 flex items-center justify-center overflow-visible transform transition-all duration-700 ${
           visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
         }`}
-      ></div>
+      >
+        <img
+          src="/hero.png"
+          alt="hero"
+          className="
+            w-[210%]
+            max-w-none
+            h-auto
+            object-contain
+            -translate-x-20 md:-translate-x-40
+            translate-y-10 md:translate-y-15
+          "
+        />
+      </div>
 
     </section>
   );
