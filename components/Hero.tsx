@@ -10,16 +10,24 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="bg-[#EC0202] flex flex-col md:flex-row items-center justify-between px-6 md:px-20 pt-24 md:pt-40 pb-20 md:pb-40 gap-20"
+      className="
+        bg-[#EC0202] 
+        flex flex-col md:flex-row items-center justify-between 
+        
+        px-6 md:px-20 lg:px-28
+        pt-24 md:pt-40 lg:pt-48
+        pb-20 md:pb-40 lg:pb-48
+        
+        gap-16 lg:gap-24
+      "
     >
 
       {/* TEXTO */}
       <div
-        className={`text-center md:text-left md:ml-10 transform transition-all duration-700 ${
+        className={`text-center md:text-left md:ml-10 transform transition-all duration-700 z-10 ${
           visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
         }`}
       >
-
         <h1
           className="
             text-4xl md:text-6xl font-extrabold text-white leading-none
@@ -51,7 +59,7 @@ export default function Hero() {
 
       {/* IMAGEN */}
       <div
-        className={`w-40 h-40 sm:w-52 sm:h-52 md:w-72 md:h-72 flex items-center justify-center overflow-visible transform transition-all duration-700 ${
+        className={`w-40 h-40 sm:w-52 sm:h-52 md:w-60 lg:w-80 flex items-center justify-center overflow-visible transform transition-all duration-700 ${
           visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
         }`}
       >
@@ -59,12 +67,14 @@ export default function Hero() {
           src="/hero.png"
           alt="hero"
           className="
-            w-[210%]
+            w-[150%] sm:w-[150%] md:w-[170%] lg:w-[189%]
+
             max-w-none
             h-auto
             object-contain
-            -translate-x-20 md:-translate-x-40
-            translate-y-10 md:translate-y-15
+
+            translate-x-0 md:-translate-x-10 lg:-translate-x-36
+            translate-y-2 md:translate-y-6 lg:translate-y-16
           "
         />
       </div>
