@@ -1,0 +1,100 @@
+.skills-section {
+  width: 100%;
+  background: white;
+  padding: 2rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .skills-section {
+    padding: 2rem 5rem;
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    
+  }
+}
+
+/* CARD */
+.skills-card {
+  background: white;
+  border: 4px solid black;
+  font-size: 1.2rem
+  
+}
+
+/* HEADER */
+.skills-card-header {
+  background: #374151;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 4px solid black;
+  
+}
+
+.skills-card-title {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem
+}
+
+.skills-close-btn {
+  width: 28px;
+  height: 28px;
+  background: #9ca3af;
+  border: 2px solid black;
+}
+
+/* CONTENT */
+.skills-content {
+  padding: 1rem;
+}
+
+/* ITEM */
+.skill-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem
+}
+
+/* ICON */
+.skill-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.skill-icon-placeholder {
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SELECT */
+.skill-select {
+  cursor: pointer;
+  border: 3px solid black;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.skill-active {
+  background: #FFE357;
+  
+}
