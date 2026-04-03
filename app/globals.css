@@ -1,66 +1,259 @@
 @import "tailwindcss";
 
+/* ============================= */
+/* BASE */
+/* ============================= */
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-/* Modo oscuro */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ffffff;
-  }
-}
-
-/* BODY LIMPIO */
 body {
   background: var(--background);
   color: var(--foreground);
 }
 
 /* ============================= */
-/* ESTILO CARTOON */
+/* PROYECTOS */
 /* ============================= */
 
-/* Sombras */
-.shadow-cartoon {
-  box-shadow: 4px 4px 0px black;
+.proyectsSection {
+  width: 100%;
+  padding: 4rem 1rem;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.shadow-cartoon-lg {
-  box-shadow: 6px 6px 0px black;
-}
-
-/* Texto con borde negro estilo cartoon */
-/* estilo cartoon (desplazado) */
-.text-cartoon {
-  text-shadow: 4px 4px 0px black;
-}
-
-/* ============================= */
-/*TIPOGRAFÍA */
-/* ============================= */
-
-/* Titulos*/
-.title-font {
-  font-weight: 700;
-}
-
-/* Texto normal */
-.body-font {
-  font-weight: 400;
-}
-/* Titulos estilo cartoon  */
-.title-font {
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-/* Simular grosor tipo Baloo */
-.title-fat {
+.title {
+  font-size: 2.5rem;
   font-weight: 900;
-  letter-spacing: 1px;
-  transform: scale(1.05);
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+/* CONTENEDOR */
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem 0;
+}
+
+/* YA NO FIJO */
+.carousel {
+  width: 100%;
+  overflow: visible;
+}
+
+/* TRACK */
+.carouselTrack {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ============================= */
+/* CARDS */
+/* ============================= */
+
+.proyectCard {
+  flex: 0 0 calc(33.333% - 1rem); /* 3 en desktop */
+  max-width: 360px;
+  height: 480px;
+
+  background: #fff;
+  border: 6px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* EFECTO */
+.proyectCard.middle {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+.proyectCard.side {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+/* HEADER */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #000;
+  color: #fff;
+
+  padding: 0.5rem 1rem;
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+}
+
+.proyectTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* CUADRITO */
+.miniBox {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 3px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* IMAGEN */
+.imageContainer {
+  height: 160px;
+  border: 3px solid #000;
+  margin-bottom: 1rem;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+/* TEXTO */
+.proyectDescription {
+  font-size: 0.9rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.tecnologias {
+  font-size: 0.8rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+/* BOTON */
+.githubBtn {
+  margin-top: auto;
+  align-self: center;
+
+  background: #ffd700;
+  border: 4px solid #000;
+
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* ============================= */
+/* FLECHAS */
+/* ============================= */
+
+.arrow {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* CENTRO */
+.prevArrow::before,
+.prevArrow::after,
+.nextArrow::before,
+.nextArrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* IZQUIERDA */
+.prevArrow::before {
+  transform: translate(-48%, -50%);
+  border-top: 28px solid transparent;
+  border-bottom: 28px solid transparent;
+  border-right: 40px solid #000;
+}
+
+.prevArrow::after {
+  transform: translate(-52%, -50%);
+  border-top: 24px solid transparent;
+  border-bottom: 24px solid transparent;
+  border-right: 34px solid #ffd700;
+}
+
+/* DERECHA */
+.nextArrow::before {
+  transform: translate(-52%, -50%);
+  border-top: 28px solid transparent;
+  border-bottom: 28px solid transparent;
+  border-left: 40px solid #000;
+}
+
+.nextArrow::after {
+  transform: translate(-48%, -50%);
+  border-top: 24px solid transparent;
+  border-bottom: 24px solid transparent;
+  border-left: 34px solid #ffd700;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .carouselContainer {
+    gap: 0.5rem;
+  }
+
+  /* scroll horizontal */
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .carouselTrack {
+    justify-content: flex-start;
+  }
+
+  /* 1 tarjeta visible */
+  .proyectCard {
+    flex: 0 0 85%;
+    max-width: none;
+    scroll-snap-align: center;
+  }
+
+  /* sin efectos raros */
+  .proyectCard.middle,
+  .proyectCard.side {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* ocultar flechas */
+  .arrow {
+    display: none;
+  }
 }

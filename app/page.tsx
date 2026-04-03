@@ -4,6 +4,7 @@ import About from "../components/About";
 import SeparatorTriangle from "../components/SeparatorTriangle";
 import SectionDivider from "../components/SectionDivider";
 import Skills from "@/components/Skills";
+import Proyects from "@/components/Proyects";
 
 export default function Home() {
   return (
@@ -22,6 +23,8 @@ export default function Home() {
       <Skills />
 
       <SectionDivider />
+
+      <Proyects />
 
     </main>
   );
