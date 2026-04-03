@@ -257,3 +257,14 @@ body {
     display: none;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 100px; /* ajusta según tu navbar */
+}
+
+
+
