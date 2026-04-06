@@ -21,30 +21,30 @@ const proyectos: Proyecto[] = [
   {
     id: 2,
     titulo: 'Arritmo',
-    descripcion: 'Aquí va el texto, después lo ponemos',
+    descripcion: 'Proyecto en desarrollo en Unity que transforma patrones de arritmia en una experiencia interactiva, combinando ritmo, diseño y desarrollo.',
     tecnologias: 'Unity',
-    github: '#'
+    github: 'https://github.com/Luciana-Cuenca/Arritmo.git'
   },
   {
     id: 3,
     titulo: 'Full-House',
-    descripcion: 'Aquí va el texto, después lo ponemos',
+    descripcion: 'Proyecto ganador de hackatón, enfocado en la gestión de propiedades con inteligencia artificial.',
     tecnologias: 'React, TypeScript, Vite, Python y FastAPI',
-    github: '#'
+    github: 'https://github.com/sebastianTFRB/FrontendWeb_reto3.git'
   },
   {
     id: 4,
-    titulo: 'Proyecto 4',
+    titulo: 'Battery Life Estimator',
     descripcion: 'Aquí va el texto, después lo ponemos',
     tecnologias: 'Tecnologías a definir',
-    github: '#'
+    github: 'https://github.com/RexbilXD/BatteryLifeEstimator.git'
   },
   {
     id: 5,
-    titulo: 'Proyecto 5',
+    titulo: 'Integracion continua',
     descripcion: 'Aquí va el texto, después lo ponemos',
     tecnologias: 'Tecnologías a definir',
-    github: '#'
+    github: 'https://github.com/C-David-Burbano-C/integracion_continua.git'
   }
 ];
 
