@@ -268,3 +268,95 @@ section {
 
 
 
+/* ============================= */
+/* GALERIA */
+/* ============================= */
+
+.gallery-section {
+  width: 100%;
+  padding: 3rem 1.5rem;
+  background: white;
+}
+
+@media (min-width: 768px) {
+  .gallery-section {
+    padding: 3rem 5rem;
+  }
+}
+
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* 🔥 TEXTO CENTRADO */
+.gallery-text-card {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* TEXTO */
+.gallery-text {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: black;
+  line-height: 1.5;
+}
+
+/* 🔥 GRID DESORDENADO */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+}
+
+/* ITEM BASE */
+.gallery-item {
+  background: #e5e7eb;
+  border: 4px solid black;
+}
+
+/* 🔥 SOLO CUADRADOS Y VERTICALES */
+
+/* GRANDE */
+.gallery-item.big {
+  grid-column: span 2;
+  aspect-ratio: 1 / 1;
+}
+
+/* MEDIANO */
+.gallery-item.medium {
+  grid-column: span 1;
+  aspect-ratio: 1 / 1;
+}
+
+/* 🔥 VERTICAL */
+.gallery-item.tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+/* 🔥 MOBILE */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item.big {
+    grid-column: span 2;
+  }
+
+  .gallery-item.tall {
+    grid-row: span 2;
+  }
+}
+
+/* LINEA */
+.gallery-line {
+  width: 100%;
+  height: 4px;
+  background: black;
+  margin-top: 3rem;
+}
