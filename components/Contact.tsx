@@ -1,3 +1,5 @@
+import SectionDivider from "./SectionDivider";
+
 const contacts = [
   {
     name: "Carlos David Burbano",
@@ -25,13 +27,15 @@ const socialLinks = [
   { href: "www.linkedin.com/in/luciana-cuenca-26356a39b", icon: "/linkedin.svg", label: "LinkedIn" },
   { href: "https://github.com/Luciana-Cuenca", icon: "/github.svg", label: "GitHub" },
   { href: "https://www.instagram.com/blood_ink_08/", icon: "/instagram.svg", label: "Instagram" },
-  {href: "mailto:lucugo.08@gmail.com", icon: "/email.svg", label: "Email" },
+  { href: "mailto:lucugo.08@gmail.com", icon: "/email.svg", label: "Email" },
 ];
 
 export default function Contact() {
   return (
     <section id="contactos" className="w-full bg-white">
-      <div className="px-4 md:px-8 py-16">
+
+      {/* HEADER (ligero shift a la derecha) */}
+      <div className="px-4 md:px-8 py-16 md:pl-12">
         <div className="flex flex-col md:flex-row gap-10 items-start">
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-black">
             Contactos
@@ -43,8 +47,11 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="bg-[#EC0202] px-4 md:px-8 py-20 relative text-white">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10">
+      {/* ROJO */}
+      <div className="bg-[#EC0202] px-4 md:px-8 py-32 relative text-white overflow-hidden">
+
+        {/* CONTACTOS (un poco más a la derecha) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10 relative z-20 md:ml-6 lg:ml-12">
           {contacts.map((contact) => (
             <div key={contact.name} className="flex flex-col items-start gap-4">
               <p className="text-lg md:text-xl font-bold leading-snug">
@@ -63,21 +70,39 @@ export default function Contact() {
           ))}
         </div>
 
-        <div className="absolute bottom-24 right-10 hidden md:block">
-          <div className="w-44 h-44 bg-white/20 rounded-full"></div>
+        {/* GATO ( */}
+        <div className="absolute bottom-50 right-0 hidden md:block z-0 pointer-events-none">
+          <img
+            src="/gato.png"
+            alt="gato"
+            className="w-[480px] lg:w-[540px] object-contain opacity-90"
+          />
         </div>
 
-        <div className="mt-20 flex items-center gap-4">
-          <div className="flex-1 h-[2px] bg-white"></div>
-          <div className="w-6 h-6 bg-white rounded-full"></div>
-          <div className="flex-1 h-[2px] bg-white"></div>
+        {/* DIVIDER */}
+        <div className="mt-55 relative z-20">
+          <div className="w-full max-w-[1400px] mx-auto flex items-center justify-center">
+
+            <div className="flex-1 h-[3px] bg-white mx-4"></div>
+
+            <img
+              src="/icon.svg"
+              alt="icon"
+              className="w-7 h-7 md:w-8 md:h-8 object-contain"
+            />
+
+            <div className="flex-1 h-[3px] bg-white mx-4"></div>
+
+          </div>
         </div>
 
-        <p className="text-center text-sm mt-6">
+        {/* TEXTO FINAL */}
+        <p className="text-center text-sm mt-12 relative z-20">
           Gracias por llegar hasta aqui, cada proyecto es una parte de lo que soy y de lo que sigo construyendo.
         </p>
 
-        <div className="flex justify-center gap-6 mt-6">
+        {/* REDES */}
+        <div className="flex justify-center gap-6 mt-8 relative z-20">
           {socialLinks.map((social) => (
             <a
               key={social.label}
@@ -95,6 +120,7 @@ export default function Contact() {
             </a>
           ))}
         </div>
+
       </div>
     </section>
   );
