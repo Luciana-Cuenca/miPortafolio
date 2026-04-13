@@ -85,8 +85,12 @@ export default function Navbar() {
       className={`fixed top-0 left-0 w-full z-50 px-4 md:px-8 py-2 md:py-3 transition-all duration-300 ${navbarBg}`}
     >
       <div className="relative">
-        <div className="flex items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
+
+        {/* TOP BAR */}
+        <div className="flex items-center justify-between gap-6 flex-nowrap">
+
+          {/* LOGO + THEME BUTTON */}
+          <div className="flex items-center gap-3 flex-shrink-0">
             <img
               src="/icon.svg"
               alt="logo"
@@ -95,7 +99,9 @@ export default function Navbar() {
 
             <button
               type="button"
-              onClick={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
+              onClick={() =>
+                setTheme((prev) => (prev === "dark" ? "light" : "dark"))
+              }
               aria-label={isDark ? "Activar modo claro" : "Activar modo oscuro"}
               className={`rounded-full border-2 px-3 py-2 text-base leading-none transition-transform hover:-translate-y-0.5 ${
                 isDark
@@ -109,7 +115,10 @@ export default function Navbar() {
             </button>
           </div>
 
-          <ul className={`hidden md:flex ml-auto gap-5 title-fat ${navbarText}`}>
+          {/* DESKTOP MENU */}
+          <ul
+            className={`hidden md:flex ml-auto gap-3 lg:gap-5 title-fat ${navbarText} flex-nowrap`}
+          >
             {menu.map((item, i) => (
               <li key={i} className="relative group">
                 <a
@@ -136,6 +145,7 @@ export default function Navbar() {
             ))}
           </ul>
 
+          {/* MOBILE BUTTON */}
           <div className="flex items-center gap-2 md:hidden">
             <button
               type="button"
@@ -165,6 +175,7 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* MOBILE MENU */}
         {open && (
           <div
             className={`md:hidden mt-3 flex flex-col gap-2 border-4 border-black p-2 shadow-[6px_6px_0_black] ${navbarBg}`}
@@ -175,7 +186,9 @@ export default function Navbar() {
                 href={getHref(item)}
                 onClick={() => setOpen(false)}
                 className={`px-4 py-3 text-sm font-bold border-2 border-black ${
-                  scrolled || isDark ? "bg-white text-black" : "bg-[#EC0202] text-white"
+                  scrolled || isDark
+                    ? "bg-white text-black"
+                    : "bg-[#EC0202] text-white"
                 }`}
               >
                 {item}
