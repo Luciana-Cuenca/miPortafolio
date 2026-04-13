@@ -23,7 +23,7 @@ const contacts = [
 
 const socialLinks = [
   {
-    href: "www.linkedin.com/in/luciana-cuenca-26356a39b",
+    href: "https://www.linkedin.com/in/luciana-cuenca-26356a39b",
     icon: "/linkedin.svg",
     label: "LinkedIn",
   },
