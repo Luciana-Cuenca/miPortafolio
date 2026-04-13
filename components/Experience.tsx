@@ -71,14 +71,16 @@ export default function Experience() {
             Testimonios
           </h2>
 
-          <div className="flex flex-col md:flex-row justify-center items-stretch gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center items-stretch">
 
             {/* TESTIMONIO 1 */}
             <div className="relative">
-              <div className="testimonial-card w-full max-w-sm h-72 md:w-[24rem] md:max-w-none md:h-80 xl:w-[26rem] xl:h-[22rem] bg-white border-[5px] border-black p-8 flex flex-col justify-start">
-                <p className="font-bold text-xl mb-5">Oscar Andrés Osorio</p>
+              <div className="testimonial-card w-full max-w-sm h-72 md:h-80 xl:h-[22rem] bg-white border-[5px] border-black p-8 flex flex-col justify-start overflow-hidden">
+                <p className="font-bold text-lg md:text-xl mb-5 break-words">
+                  Oscar Andrés Osorio
+                </p>
 
-                <p className="text-lg text-black leading-relaxed">
+                <p className="text-sm md:text-lg text-black leading-relaxed break-words">
                   Destaca mucho su forma de pensar y proponer ideas. Siempre encuentra maneras de mejorar lo que ya está hecho, aportando soluciones que realmente hacen la diferencia en el resultado final.
                 </p>
               </div>
@@ -90,10 +92,12 @@ export default function Experience() {
 
             {/* TESTIMONIO 2 */}
             <div className="relative">
-              <div className="testimonial-card w-full max-w-sm h-72 md:w-[24rem] md:max-w-none md:h-80 xl:w-[26rem] xl:h-[22rem] bg-white border-[5px] border-black p-8 flex flex-col justify-start">
-                <p className="font-bold text-xl mb-5">Daniel Fernando Arteaga</p>
+              <div className="testimonial-card w-full max-w-sm h-72 md:h-80 xl:h-[22rem] bg-white border-[5px] border-black p-8 flex flex-col justify-start overflow-hidden">
+                <p className="font-bold text-lg md:text-xl mb-5 break-words">
+                  Daniel Fernando Arteaga
+                </p>
 
-                <p className="text-lg text-black leading-relaxed">
+                <p className="text-sm md:text-lg text-black leading-relaxed break-words">
                   Ha sido una experiencia muy positiva compartir proyectos con ella. Tiene una muy buena capacidad para entender lo que se necesita y llevarlo a resultados claros, bien pensados y bien ejecutados.
                 </p>
               </div>
@@ -105,10 +109,12 @@ export default function Experience() {
 
             {/* TESTIMONIO 3 */}
             <div className="relative">
-              <div className="testimonial-card w-full max-w-sm h-72 md:w-[24rem] md:max-w-none md:h-80 xl:w-[26rem] xl:h-[22rem] bg-white border-[5px] border-black p-8 flex flex-col justify-start">
-                <p className="font-bold text-xl mb-5">Luis Carlos Revelo</p>
+              <div className="testimonial-card w-full max-w-sm h-72 md:h-80 xl:h-[22rem] bg-white border-[5px] border-black p-8 flex flex-col justify-start overflow-hidden">
+                <p className="font-bold text-lg md:text-xl mb-5 break-words">
+                  Luis Carlos Revelo
+                </p>
 
-                <p className="text-lg text-black leading-relaxed">
+                <p className="text-sm md:text-lg text-black leading-relaxed break-words">
                   Se caracteriza por su constancia y su forma de trabajar tan organizada. Sabe adaptarse a diferentes situaciones y siempre mantiene un buen nivel en lo que hace.
                 </p>
               </div>
