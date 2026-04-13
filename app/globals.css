@@ -7,11 +7,25 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --section-padding-x: 1rem;
+}
+
+html.dark {
+  --background: #111111;
+  --foreground: #f5f5f5;
+  color-scheme: dark;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-padding-x: 2rem;
+  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* ============================= */
@@ -20,7 +34,7 @@ body {
 
 .proyectsSection {
   width: 100%;
-  padding: 4rem 1rem;
+  padding: 4rem var(--section-padding-x);
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -39,9 +53,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: none;
   padding: 2rem 0;
 }
 
@@ -54,8 +68,9 @@ body {
 /* TRACK */
 .carouselTrack {
   display: flex;
-  gap: 1.5rem;
-  justify-content: center;
+  gap: 1.25rem;
+  justify-content: stretch;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -64,8 +79,8 @@ body {
 /* ============================= */
 
 .proyectCard {
-  flex: 0 0 calc(33.333% - 1rem); /* 3 en desktop */
-  max-width: 360px;
+  flex: 1 1 0; /* 3 en desktop */
+  max-width: none;
   height: 480px;
 
   background: #fff;
@@ -115,6 +130,7 @@ body {
   height: 20px;
   background: #fff;
   border: 3px solid #000;
+  color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,12 +142,21 @@ body {
   height: 160px;
   border: 3px solid #000;
   margin-bottom: 1rem;
+  overflow: hidden;
+  background: #ffffff;
 }
 
 .imagePlaceholder {
   width: 100%;
   height: 100%;
   background: #ffffff;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* TEXTO */
@@ -152,8 +177,10 @@ body {
   margin-top: auto;
   align-self: center;
 
-  background: #ffd700;
+  background-color: #ec0202 !important;
+  color: #fff !important;
   border: 4px solid #000;
+  text-decoration: none;
 
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
@@ -196,7 +223,7 @@ body {
   transform: translate(-52%, -50%);
   border-top: 24px solid transparent;
   border-bottom: 24px solid transparent;
-  border-right: 34px solid #ffd700;
+  border-right: 34px solid #e50000;
 }
 
 /* DERECHA */
@@ -211,7 +238,7 @@ body {
   transform: translate(-48%, -50%);
   border-top: 24px solid transparent;
   border-bottom: 24px solid transparent;
-  border-left: 34px solid #ffd700;
+  border-left: 34px solid #e50000;
 }
 
 /* ============================= */
@@ -274,14 +301,8 @@ section {
 
 .gallery-section {
   width: 100%;
-  padding: 3rem 1.5rem;
+  padding: 3rem var(--section-padding-x);
   background: white;
-}
-
-@media (min-width: 768px) {
-  .gallery-section {
-    padding: 3rem 5rem;
-  }
 }
 
 .gallery-wrapper {
@@ -299,7 +320,6 @@ section {
 
 /* TEXTO */
 .gallery-text {
-  font-weight: bold;
   font-size: 1.1rem;
   color: black;
   line-height: 1.5;
@@ -308,48 +328,53 @@ section {
 /* 🔥 GRID DESORDENADO */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
 }
 
 /* ITEM BASE */
 .gallery-item {
   background: #e5e7eb;
   border: 4px solid black;
+  aspect-ratio: 1 / 1;
+  min-height: 280px;
 }
 
-/* 🔥 SOLO CUADRADOS Y VERTICALES */
+/* SOLO CUADRADOS Y VERTICALES */
 
 /* GRANDE */
 .gallery-item.big {
-  grid-column: span 2;
-  aspect-ratio: 1 / 1;
+  grid-column: span 1;
 }
 
 /* MEDIANO */
 .gallery-item.medium {
   grid-column: span 1;
-  aspect-ratio: 1 / 1;
 }
 
 /* 🔥 VERTICAL */
 .gallery-item.tall {
   grid-column: span 1;
-  grid-row: span 2;
+  grid-row: span 1;
 }
 
 /* 🔥 MOBILE */
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .gallery-item.big {
-    grid-column: span 2;
+    grid-column: span 1;
   }
 
   .gallery-item.tall {
-    grid-row: span 2;
+    grid-row: span 1;
+  }
+
+  .gallery-item {
+    min-height: 160px;
   }
 }
 
@@ -359,4 +384,107 @@ section {
   height: 4px;
   background: black;
   margin-top: 3rem;
+}
+
+html.dark #about,
+html.dark #experiencia,
+html.dark .proyectsSection,
+html.dark .gallery-section,
+html.dark #contactos,
+html.dark .section-divider,
+html.dark .separator-triangle {
+  background: #111111 !important;
+}
+
+html.dark #about h2,
+html.dark #about p,
+html.dark #experiencia h2,
+html.dark #experiencia h3,
+html.dark #experiencia p,
+html.dark .proyectsSection h2,
+html.dark .gallery-section h2,
+html.dark .gallery-section p,
+html.dark #contactos h2,
+html.dark #contactos p {
+  color: #f5f5f5 !important;
+}
+
+html.dark #about .bg-gray-200,
+html.dark #experiencia .bg-gray-200,
+html.dark .gallery-item {
+  background: #1f1f1f !important;
+  border-color: #f5f5f5 !important;
+}
+
+html.dark .testimonials-section {
+  background: #111111 !important;
+}
+
+html.dark .testimonial-card {
+  background: #191919 !important;
+  border-color: #f5f5f5 !important;
+}
+
+html.dark .testimonial-pointer-outer {
+  border-top-color: #f5f5f5 !important;
+}
+
+html.dark .testimonial-pointer-inner {
+  border-top-color: #191919 !important;
+}
+
+html.dark #about .border-black,
+html.dark #experiencia .border-black,
+html.dark #contactos .border-black {
+  border-color: #f5f5f5 !important;
+}
+
+html.dark .proyectCard {
+  background: #191919;
+  border-color: #f5f5f5;
+  box-shadow: 6px 6px 0 #f5f5f5;
+}
+
+html.dark .cardHeader {
+  background: #f5f5f5;
+  color: #111111;
+}
+
+html.dark .proyectTitle {
+  color: #111111 !important;
+}
+
+html.dark .proyectDescription,
+html.dark .tecnologias {
+  color: #f5f5f5;
+}
+
+html.dark .miniBox {
+  background: #111111;
+  color: #f5f5f5;
+  border-color: #f5f5f5;
+}
+
+html.dark .imageContainer {
+  border-color: #f5f5f5;
+}
+
+html.dark .imagePlaceholder {
+  background: #1f1f1f;
+}
+
+html.dark .projectImage {
+  background: #1f1f1f;
+}
+
+html.dark .prevArrow::before {
+  border-right-color: #f5f5f5;
+}
+
+html.dark .nextArrow::before {
+  border-left-color: #f5f5f5;
+}
+
+html.dark .section-divider img {
+  filter: brightness(0) invert(1);
 }

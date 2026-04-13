@@ -7,6 +7,7 @@ import Skills from "@/components/Skills";
 import Proyects from "@/components/Proyects";
 import Experience from "@/components/Experience";
 import Gallery from "@/components/Gallery";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -35,6 +36,10 @@ export default function Home() {
       <SectionDivider />
 
       <Gallery/>
+      
+      <SectionDivider />
+      
+      <Contact/>
 
 
     </main>

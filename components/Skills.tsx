@@ -5,167 +5,150 @@ import '@/app/Skills.css';
 
 type SkillType = 'backend' | 'frontend' | 'otras';
 
+type BackendFrontend = {
+  title: string;
+  description: string;
+  skills: string[];
+  frameworks: string[];
+};
+
+type Otras = {
+  title: string;
+  description: string;
+  skills: string[];
+};
+
+type SkillsData = {
+  backend: BackendFrontend;
+  frontend: BackendFrontend;
+  otras: Otras;
+};
+
 export default function Skills() {
   const [selected, setSelected] = useState<SkillType>('backend');
 
-  const backend = {
-    languages: ['Python', 'Java', 'C#'],
-    frameworks: ['Django', 'Fast api', 'Spring Boot'],
-  };
-
-  const frontend = {
-    languages: ['Javascript', 'Html', 'Css'],
-    frameworks: ['Angular', 'Tailwind.css', 'Next.js'],
-  };
-
-  const otras = {
-    items: [
-      'Unity',
-      'Adobe Photoshop',
-      'Krita',
-      'Blender',
-      'Postgres',
-      'MongoDB',
-      'Inglés B2',
-    ],
+  const data: SkillsData = {
+    backend: {
+      title: 'Backend',
+      description: 'Logica del sistema, APIs y bases de datos',
+      skills: ['Python', 'Java', 'C#'],
+      frameworks: ['Django', 'FastAPI', 'Spring Boot'],
+    },
+    frontend: {
+      title: 'Frontend',
+      description: 'Interfaces visuales y experiencia de usuario',
+      skills: ['JavaScript', 'HTML', 'CSS'],
+      frameworks: ['Angular', 'Tailwind.css', 'Next.js'],
+    },
+    otras: {
+      title: 'Otras herramientas',
+      description: 'Software y habilidades complementarias',
+      skills: [
+        'Unity',
+        'Adobe Photoshop',
+        'Krita',
+        'Blender',
+        'Postgres',
+        'MongoDB',
+        'Ingles B2',
+      ],
+    },
   };
 
   const svgMap: Record<string, string | null> = {
     Python: '/python.svg',
     Java: '/java.svg',
     'C#': '/csharp.svg',
-    Javascript: '/javascript.svg',
-    Html: '/html.svg',
-    Css: '/css.svg',
+    JavaScript: '/javascript.svg',
+    HTML: '/html.svg',
+    CSS: '/css.svg',
     Unity: '/unity.svg',
     'Adobe Photoshop': '/photoshop.svg',
     Krita: '/krita.svg',
     Blender: '/blender.svg',
     Postgres: '/postgresql.svg',
     MongoDB: '/mongodb.svg',
-    'Inglés B2': '/english.svg',
+    'Ingles B2': '/english.svg',
   };
 
-  const currentSkills =
-    selected === 'backend' ? backend : frontend;
+  const current = data[selected];
+  const hasFrameworks = selected === 'backend' || selected === 'frontend';
 
   return (
     <section id="habilidades" className="skills-section">
-      <div className="skills-grid">
+      <div className="w-full max-w-[1400px] mx-auto">
+        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-black mb-8">
+          Habilidades
+        </h2>
 
-        {/* CARD 1 */}
-        <div className="skills-card md:row-start-1 md:col-start-1 order-1">
-          <div className="skills-card-header">
-            <span className="skills-card-title">Habilidades</span>
-            <button className="skills-close-btn">✕</button>
-          </div>
-
-          <div className="skills-content flex flex-col md:flex-row gap-6 md:gap-10 xl:gap-16">
-            <div className="w-24 h-24 md:w-32 md:h-32 xl:w-40 xl:h-40 border-4 border-red-600 bg-red-500 flex items-center justify-center">
-              <span className="text-white text-xs font-bold text-center">
-                Espacio<br />para SVG
-              </span>
-            </div>
-
-            <p className="font-bold text-black text-sm md:text-base xl:text-lg flex items-center">
-              Las herramientas y habilidades que me permiten convertir ideas en experiencias claras, útiles y bien diseñadas.
-            </p>
-          </div>
-        </div>
-
-        {/* CARD 2 */}
-        <div className="skills-card md:row-start-1 md:row-span-2 md:col-start-2 order-3">
-          <div className="skills-card-header">
-            <span className="skills-card-title">
-              {selected === 'backend'
-                ? 'Backend'
-                : selected === 'frontend'
-                ? 'Frontend'
-                : 'Otras'}
-            </span>
-            <button className="skills-close-btn">✕</button>
-          </div>
-
-          <div className="skills-content space-y-2">
-            {selected === 'otras'
-              ? otras.items.map((item) => {
-                  const svgPath = svgMap[item];
-                  return (
-                    <div key={item} className="skill-item">
-                      {svgPath ? (
-                        <img src={svgPath} alt={item} className="skill-icon" />
-                      ) : (
-                        <div className="skill-icon-placeholder">—</div>
-                      )}
-                      <span>{item}</span>
-                    </div>
-                  );
-                })
-              : currentSkills.languages.map((lang) => {
-                  const svgPath = svgMap[lang];
-                  return (
-                    <div key={lang} className="skill-item">
-                      {svgPath ? (
-                        <img src={svgPath} alt={lang} className="skill-icon" />
-                      ) : (
-                        <div className="skill-icon-placeholder">—</div>
-                      )}
-                      <span>{lang}</span>
-                    </div>
-                  );
-                })}
-          </div>
-        </div>
-
-        {/* CARD 3 */}
-        <div className="skills-card md:row-start-2 md:col-start-1 order-2 -mt-2">
-          <div className="skills-card-header">
-            <span className="skills-card-title">Selecciona</span>
-            <button className="skills-close-btn">✕</button>
-          </div>
-
-          <div className="skills-content space-y-2">
-            {[
-              { key: 'backend', label: 'Backend' },
-              { key: 'frontend', label: 'Frontend' },
-              { key: 'otras', label: 'Otras' },
-            ].map(({ key, label }) => (
-              <div
-                key={key}
-                onClick={() => setSelected(key as SkillType)}
-                className={`skill-select ${
-                  selected === key ? 'skill-active' : ''
-                }`}
-              >
-                <span>
-                  <span className="mr-2">−</span>
-                  {label}
-                </span>
-
-                {selected === key && <span>◀</span>}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CARD 4 */}
-        {selected !== 'otras' && (
-          <div className="skills-card md:row-start-2 md:col-start-2 order-4">
+        <div className="skills-grid">
+          <div className="skills-card h-[420px] flex flex-col">
             <div className="skills-card-header">
-              <span className="skills-card-title">Frameworks</span>
-              <button className="skills-close-btn">✕</button>
+              <span className="skills-card-title">Habilidades</span>
+              <button className="skills-close-btn" />
             </div>
 
-            <div className="skills-content space-y-2">
-              {currentSkills.frameworks.map((fw) => (
-                <div key={fw} className="skill-item">
-                  <span>−</span>
-                  <span>{fw}</span>
+            <div className="skills-content flex flex-col gap-4 overflow-y-auto">
+              <p>
+                Explora las tecnologias y herramientas que utilizo para desarrollar proyectos.
+              </p>
+
+              {(['backend', 'frontend', 'otras'] as SkillType[]).map((key) => (
+                <div
+                  key={key}
+                  onClick={() => setSelected(key)}
+                  className={`skill-select ${
+                    selected === key ? 'skill-active' : ''
+                  }`}
+                >
+                  <span>{data[key].title}</span>
+                  {selected === key && <span>{'<'}</span>}
                 </div>
               ))}
             </div>
           </div>
-        )}
+
+          <div className="skills-card h-[420px] flex flex-col">
+            <div className="skills-card-header">
+              <span className="skills-card-title">{current.title}</span>
+              <button className="skills-close-btn" />
+            </div>
+
+            <div className="skills-content flex flex-col gap-4 overflow-y-auto">
+              <p>{current.description}</p>
+
+              <div>
+                <p className="font-bold mb-2">
+                  {selected === 'otras' ? 'Herramientas' : 'Tecnologias'}
+                </p>
+
+                {current.skills.map((item) => (
+                  <div key={item} className="skill-item">
+                    {svgMap[item] ? (
+                      <img src={svgMap[item]!} className="skill-icon" />
+                    ) : (
+                      <div className="skill-icon-placeholder">-</div>
+                    )}
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              {hasFrameworks && (
+                <div className="mt-4 border-t-2 border-black pt-3">
+                  <p className="font-bold mb-2">Frameworks</p>
+
+                  {data[selected].frameworks.map((fw) => (
+                    <div key={fw} className="skill-item">
+                      <span>-</span>
+                      <span>{fw}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,13 +1,7 @@
 .skills-section {
   width: 100%;
   background: white;
-  padding: 2rem 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .skills-section {
-    padding: 2rem 5rem;
-  }
+  padding: 2rem var(--section-padding-x);
 }
 
 .skills-grid {
@@ -97,4 +91,42 @@
 .skill-active {
   background: #FFE357;
   
+}
+
+html.dark .skills-section {
+  background: #111111;
+}
+
+html.dark .skills-section h2 {
+  color: #f5f5f5 !important;
+}
+
+html.dark .skills-card {
+  background: #191919;
+  border-color: #f5f5f5;
+  color: #f5f5f5;
+}
+
+html.dark .skills-card-header {
+  background: #2b2b2b;
+  border-bottom-color: #f5f5f5;
+}
+
+html.dark .skills-close-btn,
+html.dark .skill-icon-placeholder,
+html.dark .skill-select {
+  border-color: #f5f5f5;
+}
+
+html.dark .skills-close-btn {
+  background: #4b5563;
+}
+
+html.dark .skill-icon {
+  filter: brightness(0) invert(1);
+}
+
+html.dark .skill-active {
+  background: #ec0202;
+  color: #fff;
 }

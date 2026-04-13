@@ -1,6 +1,6 @@
 export default function SeparatorTriangle() {
   return (
-    <div className="w-full h-12 bg-white flex justify-center">
+    <div className="separator-triangle w-full h-12 bg-white flex justify-center">
       <div className="relative">
 
         {/* BORDE NEGRO */}
